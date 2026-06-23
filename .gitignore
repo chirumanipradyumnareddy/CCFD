@@ -23,3 +23,8 @@ __pycache__ - Copy/
 
 data/
 datasets/
+clients/bank1/data.csv
+clients/bank2/data.csv
+clients/bank3/data.csv
+clients/bank4/data.csv
+clients/bank5/data.csv
