@@ -1,0 +1,25 @@
+venv/
+.venv/
+flenv/
+river/
+
+venv - Copy/
+river - Copy/
+
+node_modules/
+
+__pycache__/
+__pycache__ - Copy/
+
+*.pt
+*.pth
+*.h5
+*.onnx
+*.pkl
+
+*.zip
+*.rar
+*.7z
+
+data/
+datasets/

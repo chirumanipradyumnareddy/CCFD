@@ -1,0 +1,47 @@
+{
+  "system_info": {
+    "name": "Ultimate Fraud Detection System",
+    "version": "2.0",
+    "timestamp": "2025-12-23T11:18:43.442044",
+    "execution_time": "0:00:17.203891"
+  },
+  "configuration": {
+    "test_size": 0.5,
+    "window_size": 150,
+    "accuracy_threshold": 0.75,
+    "confidence_level": 0.97,
+    "n_samples": 10000,
+    "n_features": 20,
+    "drift_intensity": 0.8,
+    "gradual_drift_duration": 500,
+    "system_name": "Ultimate Fraud Detection System",
+    "version": "2.0",
+    "enable_api": true,
+    "enable_dashboard": true,
+    "save_models": true,
+    "export_reports": true
+  },
+  "dataset_info": {
+    "total_samples": 10000,
+    "training_samples": 5000,
+    "testing_samples": 5000,
+    "fraud_ratio": 0.1313,
+    "features": 20
+  },
+  "performance_summary": {
+    "metrics": {
+      "accuracy": 0.5482,
+      "precision": 0.48569612205975843,
+      "recall": 0.34507678410117437,
+      "f1": 0.4034856086612094
+    },
+    "model_usage": {
+      "primary": 5000
+    },
+    "drift_stats": {
+      "total_drifts": 97,
+      "model_switches": 0,
+      "avg_drift_interval": 49.489583333333336
+    },
+    "error_stats": {
+      "start_time": 

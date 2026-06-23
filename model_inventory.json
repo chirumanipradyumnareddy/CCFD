@@ -1,0 +1,186 @@
+{
+  "export_timestamp": "2025-12-23T11:57:13.299046",
+  "models": {
+    "primary": {
+      "name": "primary",
+      "description": "Primary balanced classifier",
+      "type": "logistic_regression",
+      "created_at": "2025-12-23T11:56:23.067425",
+      "version": "1.0",
+      "parameters": {
+        "C": 1.0,
+        "class_weight": "balanced",
+        "dual": false,
+        "fit_intercept": true,
+        "intercept_scaling": 1,
+        "l1_ratio": "None",
+        "max_iter": 2000,
+        "multi_class": "auto",
+        "n_jobs": "None",
+        "penalty": "l2",
+        "random_state": 42,
+        "solver": "lbfgs",
+        "tol": 0.0001,
+        "verbose": 0,
+        "warm_start": false
+      },
+      "performance": {
+        "usage_count": 0,
+        "total_predictions": 152,
+        "correct_predictions": 46,
+        "accuracy": 0.3026315789473684,
+        "avg_confidence": 0.7510970097308242
+      }
+    },
+    "precision_specialist": {
+      "name": "precision_specialist",
+      "description": "Minimizes false positives",
+      "type": "logistic_regression_l1",
+      "created_at": "2025-12-23T11:56:23.095035",
+      "version": "1.0",
+      "parameters": {
+        "C": 0.1,
+        "class_weight": {
+          "0": 1,
+          "1": 5
+        },
+        "dual": false,
+        "fit_intercept": true,
+        "intercept_scaling": 1,
+        "l1_ratio": "None",
+        "max_iter": 100,
+        "multi_class": "auto",
+        "n_jobs": "None",
+        "penalty": "l1",
+        "random_state": 42,
+        "solver": "liblinear",
+        "tol": 0.0001,
+        "verbose": 0,
+        "warm_start": false
+      },
+      "performance": {
+        "usage_count": 1,
+        "total_predictions": 2348,
+        "correct_predictions": 435,
+        "accuracy": 0.18526405451448041,
+        "avg_confidence": 0.7817605318562282
+      }
+    },
+    "recall_specialist": {
+      "name": "recall_specialist",
+      "description": "Maximizes fraud detection",
+      "type": "random_forest",
+      "created_at": "2025-12-23T11:56:24.321083",
+      "version": "1.0",
+      "parameters": {
+        "bootstrap": true,
+        "ccp_alpha": 0.0,
+        "class_weight": "balanced",
+        "criterion": "gini",
+        "max_depth": 12,
+        "max_features": "sqrt",
+        "max_leaf_nodes": "None",
+        "max_samples": "None",
+        "min_impurity_decrease": 0.0,
+        "min_samples_leaf": 1,
+        "min_samples_split": 5,
+        "min_weight_fraction_leaf": 0.0,
+        "n_estimators": 150,
+        "n_jobs": -1,
+        "oob_score": false,
+        "random_state": 42,
+        "verbose": 0,
+        "warm_start": false
+      },
+      "performance": {
+        "usage_count": 0,
+        "total_predictions": 0,
+        "correct_predictions": 0,
+        "accuracy": 0.0,
+        "avg_confidence": 0.0
+      }
+    },
+    "complex_specialist": {
+      "name": "complex_specialist",
+      "description": "Detects complex patterns",
+      "type": "gradient_boosting",
+      "created_at": "2025-12-23T11:57:05.873466",
+      "version": "1.0",
+      "parameters": {
+        "ccp_alpha": 0.0,
+        "criterion": "friedman_mse",
+        "init": "None",
+        "learning_rate": 0.05,
+        "loss": "log_loss",
+        "max_depth": 7,
+        "max_features": "None",
+        "max_leaf_nodes": "None",
+        "min_impurity_decrease": 0.0,
+        "min_samples_leaf": 1,
+        "min_samples_split": 10,
+        "min_weight_fraction_leaf": 0.0,
+        "n_estimators": 200,
+        "n_iter_no_change": "None",
+        "random_state": 42,
+        "subsample": 0.8,
+        "tol": 0.0001,
+        "validation_fraction": 0.1,
+        "verbose": 0,
+        "warm_start": false
+      },
+      "performance": {
+        "usage_count": 0,
+        "total_predictions": 0,
+        "correct_predictions": 0,
+        "accuracy": 0.0,
+        "avg_confidence": 0.0
+      }
+    },
+    "drift_recovery": {
+      "name": "drift_recovery",
+      "description": "Adapts to concept drift",
+      "type": "neural_network",
+      "created_at": "2025-12-23T11:57:08.550688",
+      "version": "1.0",
+      "parameters": {
+        "activation": "relu",
+        "alpha": 0.001,
+        "batch_size": "auto",
+        "beta_1": 0.9,
+        "beta_2": 0.999,
+        "early_stopping": true,
+        "epsilon": 1e-08,
+        "hidden_layer_sizes": "(100, 50, 25)",
+        "learning_rate": "adaptive",
+        "learning_rate_init": 0.001,
+        "max_fun": 15000,
+        "max_iter": 1000,
+        "momentum": 0.9,
+        "n_iter_no_change": 10,
+        "nesterovs_momentum": true,
+        "power_t": 0.5,
+        "random_state": 42,
+        "shuffle": true,
+        "solver": "adam",
+        "tol": 0.0001,
+        "validation_fraction": 0.1,
+        "verbose": false,
+        "warm_start": false
+      },
+      "performance": {
+        "usage_count": 0,
+        "total_predictions": 0,
+        "correct_predictions": 0,
+        "accuracy": 0.0,
+        "avg_confidence": 0.0
+      }
+    }
+  },
+  "switch_history": [
+    {
+      "timestamp": "2025-12-23T11:57:08.961126",
+      "from": "primary",
+      "to": "precision_specialist",
+      "reason": "Drift detected: F1 score dropped to 0.444...",
+      "performance_metrics": {
+        "drift_detected": 

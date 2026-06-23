@@ -1,0 +1,16 @@
+{
+    "system_name": "Ultimate Fraud Detection System",
+    "version": "2.0",
+    "test_size": 0.5,
+    "window_size": 150,
+    "accuracy_threshold": 0.75,
+    "confidence_level": 0.97,
+    "n_samples": 5000,
+    "n_features": 20,
+    "drift_intensity": 0.8,
+    "gradual_drift_duration": 500,
+    "enable_api": true,
+    "enable_dashboard": true,
+    "save_models": true,
+    "export_reports": true
+}
